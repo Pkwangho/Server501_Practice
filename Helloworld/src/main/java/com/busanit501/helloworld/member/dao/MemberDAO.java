@@ -20,7 +20,7 @@ public class MemberDAO {
     public void insert(MemberVO memberVO) throws SQLException {
 
         String sql = "insert into tbl_member (name,password,dueDate,finished) " +
-                "values (?, ?, ?,?,?)";
+                "values (?, ?, ?,?)";
         @Cleanup Connection connection = ConnectionUtil.INSTANCE.getConnection();
         @Cleanup PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, memberVO.getName());

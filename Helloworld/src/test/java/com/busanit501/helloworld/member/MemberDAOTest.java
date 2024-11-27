@@ -27,7 +27,6 @@ public class MemberDAOTest {
         MemberVO memberVO = MemberVO.builder()
                 .name("박광호")
                 .password("123456")
-                .birthday(LocalDate.of(1996, 8, 27))
                 .dueDate(LocalDate.of(2024, 12, 31))
                 .build();
 
