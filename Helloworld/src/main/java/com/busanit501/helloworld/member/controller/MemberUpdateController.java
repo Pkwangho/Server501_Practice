@@ -61,7 +61,6 @@ public class MemberUpdateController extends HttpServlet {
                 .tno(Long.valueOf(request.getParameter("tno")))
                 .name(request.getParameter("name"))
                 .password(request.getParameter("password"))
-                .birthday(LocalDate.parse(request.getParameter("birthday"), DATE_TIME_FORMATTER))
                 .dueDate(LocalDate.parse(request.getParameter("dueDate"),DATE_TIME_FORMATTER))
                 .finished(checkFinished)
                 .build();

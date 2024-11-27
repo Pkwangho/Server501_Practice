@@ -22,7 +22,6 @@ public class MemberVO {
     private Long tno;
     private String name;
     private String password;
-    private LocalDate birthday;
     private LocalDate dueDate;
     private boolean finished;
 }

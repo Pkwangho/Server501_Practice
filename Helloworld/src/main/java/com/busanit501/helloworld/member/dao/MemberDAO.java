@@ -19,15 +19,14 @@ public class MemberDAO {
 
     public void insert(MemberVO memberVO) throws SQLException {
 
-        String sql = "insert into tbl_member (name,password,birthday,dueDate,finished) " +
+        String sql = "insert into tbl_member (name,password,dueDate,finished) " +
                 "values (?, ?, ?,?,?)";
         @Cleanup Connection connection = ConnectionUtil.INSTANCE.getConnection();
         @Cleanup PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, memberVO.getName());
         preparedStatement.setString(2, memberVO.getPassword());
-        preparedStatement.setDate(3,Date.valueOf(memberVO.getBirthday()));
-        preparedStatement.setDate(4, Date.valueOf(memberVO.getDueDate()));
-        preparedStatement.setBoolean(5, memberVO.isFinished());
+        preparedStatement.setDate(3, Date.valueOf(memberVO.getDueDate()));
+        preparedStatement.setBoolean(4, memberVO.isFinished());
         preparedStatement.executeUpdate();
     }
 
@@ -46,7 +45,6 @@ public class MemberDAO {
                     .tno(resultSet.getLong("tno"))
                     .name(resultSet.getString("name"))
                     .password(resultSet.getString("password"))
-                    .birthday(resultSet.getDate("dueDate").toLocalDate())
                     .dueDate(resultSet.getDate("dueDate").toLocalDate())
                     .finished(resultSet.getBoolean("finished"))
                     .build();
@@ -70,7 +68,6 @@ public class MemberDAO {
                 .tno(resultSet.getLong("tno"))
                 .name(resultSet.getString("name"))
                 .password(resultSet.getString("password"))
-                .birthday(resultSet.getDate("dueDate").toLocalDate())
                 .dueDate(resultSet.getDate("dueDate").toLocalDate())
                 .finished(resultSet.getBoolean("finished"))
                 .build();
@@ -85,7 +82,7 @@ public class MemberDAO {
     // 예시2) ,DTO 화면( 출력에서 전달하고 싶은 데이터만 골라서 사용할수 있음. )
     // 화면에서 받아옴, 테스트 , 더미 데이터 확인.
     public void updateOne(MemberVO memberVO) throws SQLException {
-        String sql = " update tbl_member set name=?,password=?,birthday=?, dueDate=?, finished=?" +
+        String sql = " update tbl_member set name=?,password=?, dueDate=?, finished=?" +
                 " where tno=?";
         @Cleanup Connection connection = ConnectionUtil.INSTANCE.getConnection();
         @Cleanup PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -93,10 +90,9 @@ public class MemberDAO {
         // VO 에서 꺼내서, 디비로 데이터 전달하는 과정.
         preparedStatement.setString(1, memberVO.getName());
         preparedStatement.setString(2, memberVO.getPassword());
-        preparedStatement.setDate(3, Date.valueOf(memberVO.getBirthday()));
-        preparedStatement.setDate(4, Date.valueOf(memberVO.getDueDate()));
-        preparedStatement.setBoolean(5,memberVO.isFinished());
-        preparedStatement.setLong(6,memberVO.getTno());
+        preparedStatement.setDate(3, Date.valueOf(memberVO.getDueDate()));
+        preparedStatement.setBoolean(4,memberVO.isFinished());
+        preparedStatement.setLong(5,memberVO.getTno());
         preparedStatement.executeUpdate();
 
     }

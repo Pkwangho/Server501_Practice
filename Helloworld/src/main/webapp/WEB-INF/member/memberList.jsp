@@ -28,7 +28,6 @@
             <span>${dto.tno}</span>
             <span><a href="/member/read?tno=${dto.tno}">${dto.name}</a></span>
             <span>${dto.password}</span>
-            <span>${dto.birthday}</span>
             <span>${dto.dueDate}</span>
             <span>${dto.finished? "완료": "미완료"}</span>
         </li>

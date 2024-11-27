@@ -1,40 +1,39 @@
-//package com.busanit501.helloworld.member;
-//
-//
-//import com.busanit501.helloworld.member.dao.MemberDAO;
-//import com.busanit501.helloworld.member.vo.MemberVO;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
-//
-//
-//
-//import java.time.LocalDate;
-//
-//
-//public class MemberDAOTest {
-//    private MemberDAO memberDAO;
-//
-//    // 아래에 각 단위 테스트가 실행되기전에, 먼저 실행을 함.
-//    @BeforeEach
-//    public void ready() {
-//        memberDAO = new MemberDAO();
-//    }
-//
-//    // 1
-//    @Test
-//    public void insertTest() throws Exception {
-//
-//        MemberVO memberVO = MemberVO.builder()
-//                .name("박광호")
-//                .password("123456")
-//                .birthday(LocalDate.of(1996, 8, 27))
-//                .dueDate(LocalDate.of(2024, 12, 31))
-//                .build();
-//
-//        memberDAO.insert(memberVO);
-//
-//    }
-//
+package com.busanit501.helloworld.member;
+
+
+import com.busanit501.helloworld.member.dao.MemberDAO;
+import com.busanit501.helloworld.member.vo.MemberVO;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+
+
+import java.time.LocalDate;
+
+
+public class MemberDAOTest {
+    private MemberDAO memberDAO;
+
+    // 아래에 각 단위 테스트가 실행되기전에, 먼저 실행을 함.
+    @BeforeEach
+    public void ready() {
+        memberDAO = new MemberDAO();
+    }
+
+    // 1
+    @Test
+    public void insertTest() throws Exception {
+
+        MemberVO memberVO = MemberVO.builder()
+                .name("박광호")
+                .password("123456")
+                .birthday(LocalDate.of(1996, 8, 27))
+                .dueDate(LocalDate.of(2024, 12, 31))
+                .build();
+
+        memberDAO.insert(memberVO);
+    }
+
 //    //2, 전체 목록 조회 테스트
 //    @Test
 //    public void testList() throws SQLException {
@@ -76,5 +75,5 @@
 //
 //    }
 //
-//}// class
-//
+}// class
+

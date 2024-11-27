@@ -35,9 +35,9 @@
     </div>
 </form>
 
-<form action="/food/delete2?tno=${dto.tno}" method="post">
+<form action="/member/delete2?tno=${dto.tno}" method="post">
     <button type="submit">삭제하기</button>
 </form>
-<a href="/food/list2">목록가기</a>
+<a href="/member/list">목록가기</a>
 </body>
 </html>

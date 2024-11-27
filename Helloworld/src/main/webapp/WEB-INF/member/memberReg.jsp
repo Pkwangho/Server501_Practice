@@ -20,9 +20,6 @@
         <input type="text" name="password" placeholder="password를 입력 해주세요.">
     </div>
     <div>
-        <input type="date" name="birthDate">
-    </div>
-    <div>
         <input type="date" name="dueDate">
     </div>
     <button type="reset">초기화</button>

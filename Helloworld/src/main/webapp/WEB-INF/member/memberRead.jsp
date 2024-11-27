@@ -21,9 +21,7 @@
 <div>
     <input type="text" name="password" value="${dto.password}" readonly>
 </div>
-<div>
-    <input type="date" name="birthday" value="${dto.birthday}" readonly>
-</div>
+
 <div>
     <input type="date" name="dueDate" value="${dto.dueDate}">
 </div>

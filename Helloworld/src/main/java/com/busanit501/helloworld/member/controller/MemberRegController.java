@@ -41,7 +41,6 @@ public class MemberRegController extends HttpServlet {
         MemberDTO memberDTO = MemberDTO.builder()
                 .name(request.getParameter("name"))
                 .password(request.getParameter("password"))
-                .birthday(LocalDate.parse(request.getParameter("birthday"), DATE_TIME_FORMATTER))
                 .dueDate(LocalDate.parse(request.getParameter("dueDate"),DATE_TIME_FORMATTER))
                 .build();
         // Controller -> Service
@@ -52,7 +51,7 @@ public class MemberRegController extends HttpServlet {
         }
 
         System.out.println("doPost : 글쓰기 처리하는 로직, 디비 연결 전, 리스트로 이동함");
-        response.sendRedirect("/member/list");
+        response.sendRedirect("/Member/list");
 
     }
 }
