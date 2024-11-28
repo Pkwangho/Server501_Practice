@@ -12,12 +12,12 @@
 </head>
 <body>
 <h1>jdbcex 작업 중. tno 번호로 수정화면 역할. </h1>
-<form action="/food/update2?tno=${dto.tno}" method="post">
+<form action="/member/update?tno=${dto.tno}" method="post">
     <div>
         <input type="text" name="tno" value="${dto.tno}" readonly>
     </div>
     <div>
-        <input type="text" name="price" value="${dto.price}">
+        <input type="text" name="password" value="${dto.password}">
     </div>
     <div>
         <input type="text" name="name" value="${dto.name}" placeholder="제목 입력 해주세요." >
@@ -35,7 +35,7 @@
     </div>
 </form>
 
-<form action="/member/delete2?tno=${dto.tno}" method="post">
+<form action="/member/delete?tno=${dto.tno}" method="post">
     <button type="submit">삭제하기</button>
 </form>
 <a href="/member/list">목록가기</a>

@@ -7,8 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 
 
 public class MemberDAOTest {
@@ -33,46 +34,45 @@ public class MemberDAOTest {
         memberDAO.insert(memberVO);
     }
 
-//    //2, 전체 목록 조회 테스트
-//    @Test
-//    public void testList() throws SQLException {
-//        List<MemberVO> list = memberDAO.selectAll();
-//        list.forEach(vo -> System.out.println(vo));
-//    }
-//
-//    //3, 하나 조회 테스트
-//    @Test
-//    public void getOneTest() throws SQLException {
-//        Long tno = 3L;
-//        MemberVO memberVO = memberDAO.selectOne(tno);
-//        System.out.println(memberVO);
-//    }
-//
-//    // 4, 삭제 테스트
-//    @Test
-//    public void deleteTest() throws SQLException {
-//        Long tno = 4L;
-//        memberDAO.deleteMember(tno);
-//    }
-//
-//     4, 수정 테스트
-//    @Test
-//    public void updateTest() throws SQLException {
-//        // 실제 작업은 내용을 화면에서 받아오는 대신,
-//        // 하드 코딩으로 값을 더미로 테스트.
-//        MemberVO memberVO = MemberVO.builder()
-//                .tno(3L)
-//                .name("수정 테스트 중")
-//                .password("1234567")
-//                .finished(false)
-//                .birthday(LocalDate.of(1996, 8, 27)
-//                .dueDate(LocalDate.of(2024, 11, 25))
-//
-//                .build();
-//
-//        memberDAO.updateOne(memberVO);
-//
-//    }
-//
+    //2, 전체 목록 조회 테스트
+    @Test
+    public void testList() throws SQLException {
+        List<MemberVO> list = memberDAO.selectAll();
+        list.forEach(vo -> System.out.println(vo));
+    }
+
+    //3, 하나 조회 테스트
+    @Test
+    public void getOneTest() throws SQLException {
+        Long tno = 3L;
+        MemberVO memberVO = memberDAO.selectOne(tno);
+        System.out.println(memberVO);
+    }
+
+    // 4, 삭제 테스트
+    @Test
+    public void deleteTest() throws SQLException {
+        Long tno = 4L;
+        memberDAO.deleteMember(tno);
+    }
+
+     // 4, 수정 테스트
+    @Test
+    public void updateTest() throws SQLException {
+        // 실제 작업은 내용을 화면에서 받아오는 대신,
+        // 하드 코딩으로 값을 더미로 테스트.
+        MemberVO memberVO = MemberVO.builder()
+                .tno(3L)
+                .name("수정 테스트 중")
+                .password("1234567")
+                .finished(false)
+                .dueDate(LocalDate.of(2024, 11, 25))
+
+                .build();
+
+        memberDAO.updateOne(memberVO);
+
+    }
+
 }// class
 
