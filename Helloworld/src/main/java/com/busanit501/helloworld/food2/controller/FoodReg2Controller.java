@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-@WebServlet(name = "FoodReg2Controller",urlPatterns = "/food2/register2")
+@WebServlet(name = "FoodReg2Controller",urlPatterns = "/food/register2")
 public class FoodReg2Controller extends HttpServlet {
 
     // 서비스를 포함 하기. 의존하기.

@@ -3,6 +3,7 @@ package com.busanit501.helloworld.member;
 
 import com.busanit501.helloworld.member.dao.MemberDAO;
 import com.busanit501.helloworld.member.vo.MemberVO;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +11,10 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 
+@Log4j2
 public class MemberDAOTest {
     private MemberDAO memberDAO;
 
@@ -67,11 +70,15 @@ public class MemberDAOTest {
                 .password("1234567")
                 .finished(false)
                 .dueDate(LocalDate.of(2024, 11, 25))
-
                 .build();
-
         memberDAO.updateOne(memberVO);
+    }
 
+    @Test
+    public void updateUuidTest() throws SQLException {
+        String uuid = UUID.randomUUID().toString();
+        log.info("uuid 랜덤 문자열 샘플 : " + uuid);
+        memberDAO.updateUuid("박광호",uuid);
     }
 
 }// class

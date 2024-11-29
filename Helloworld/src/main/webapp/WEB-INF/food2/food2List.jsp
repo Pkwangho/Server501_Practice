@@ -13,10 +13,18 @@
     <title>Title</title>
 </head>
 <body>
-<h1>jdbcex의 todoList 목록화면. </h1>
-<a href="/food2/register2">글쓰기 폼이동</a>
+
+<h1>food2의 foodList 목록화면. </h1>
+<h2>${loginInfo2.name}님 환영합니다.</h2>
+임시 로그인한 유저 정보: ${loginInfo2}
+임시 조회한 게시글 번호 정보 : ${cookie.viewTodos.value}
+
+<form action="/logout2" method="post">
+    <button type="submit">로그아웃테스트</button>
+</form>
+<a href="/food/register2">글쓰기 폼이동</a>
 <h2>todoRead 하나 조회 더미 </h2>
-<a href="/food/read2?tno=5">하나 조회</a>
+<a href="/food/read2?tno=1">하나 조회</a>
 
 
 

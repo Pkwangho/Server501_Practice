@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>food2 - food 글쓰기 폼 화면</h1>
-<form action="/food2/register2" method="post">
+<form action="/food/register2" method="post">
     <div>
         <input type="text" name="name" placeholder="제목 입력 해주세요.">
     </div>

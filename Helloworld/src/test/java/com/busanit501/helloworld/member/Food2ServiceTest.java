@@ -1,8 +1,8 @@
-package com.busanit501.helloworld.jdbcex;
+package com.busanit501.helloworld.member;
 
 import com.busanit501.helloworld.food2.dto.Food2DTO;
 import com.busanit501.helloworld.food2.service.Food2Service;
-import com.busanit501.helloworld.jdbcex.dto.TodoDTO;
+
 import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,7 +40,7 @@ public class Food2ServiceTest {
     }
     @Test
     public void testSelectOne() throws SQLException {
-        val food2DTO = food2Service.get(5L);
+        val food2DTO = food2Service.get(4L);
         log.info("하나 조회. todoDTO " + food2DTO);
     }
 

@@ -1,7 +1,6 @@
 package com.busanit501.helloworld.food2.controller;
 
 import com.busanit501.helloworld.food2.service.Food2Service;
-import com.busanit501.helloworld.jdbcex.service.TodoService;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;

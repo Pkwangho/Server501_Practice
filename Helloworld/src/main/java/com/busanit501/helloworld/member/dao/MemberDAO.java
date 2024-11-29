@@ -107,5 +107,14 @@ public class MemberDAO {
         preparedStatement.executeUpdate();
 
     }
+
+    public void updateUuid(String name, String uuid) throws SQLException {
+        String query = "update tbl_member set uuid=? where name=?";
+        @Cleanup Connection connection = ConnectionUtil.INSTANCE.getConnection();
+        @Cleanup PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, uuid);
+        preparedStatement.setString(2, name);
+        preparedStatement.executeUpdate();
+    } //
 } //class
 

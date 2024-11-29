@@ -110,6 +110,10 @@ public enum MemberService {
         memberDAO.deleteMember(tno);
     }
 
+    public void updateUuid(String name, String uuid) throws SQLException {
+        memberDAO.updateUuid(name,uuid);
+    }
+
 }
 
 

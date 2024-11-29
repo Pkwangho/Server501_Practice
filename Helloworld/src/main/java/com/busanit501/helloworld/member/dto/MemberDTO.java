@@ -18,4 +18,5 @@ public class MemberDTO {
     private String password;
     private LocalDate dueDate;
     private boolean finished;
+    private String uuid;
 }

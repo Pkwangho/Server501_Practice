@@ -25,7 +25,7 @@ public class TodoDeleteController extends HttpServlet {
         //
         log.info("doPost TodoDeleteController 확인");
         try {
-           todoService.delete(tno);
+            todoService.delete(tno);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

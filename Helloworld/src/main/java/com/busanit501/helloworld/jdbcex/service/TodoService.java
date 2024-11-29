@@ -9,6 +9,7 @@ import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +22,7 @@ public enum TodoService {
     // 2) DAO 기능
 
     private TodoDAO todoDAO;
-    private ModelMapper modelMapper ;
+    private ModelMapper modelMapper;
 
     // 생성자 이용해서, 초기화하기.
     TodoService() {
@@ -82,6 +83,9 @@ public enum TodoService {
                 .collect(Collectors.toList());
         return dtoList;
     }
+
+    //3
+    // 하나 조회, 상세보기.
     public TodoDTO get(Long tno) throws SQLException {
         log.info("tno : " + tno);
         ///  디비에서 하나 조회 결과 받았음.
