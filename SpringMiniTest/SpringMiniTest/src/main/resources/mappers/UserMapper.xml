@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.busanit501.springminitest.mapper.UserMapper">
+    <select id="getTime" resultType="string">
+        select now()
+    </select>
+
+    <insert id="insert">
+        insert into tbl_user (name, password,dueDate)
+        values (#{name},#{password}, #{dueDate})
+    </insert>
+
+    <!--    여러개 행 조회, 각행의 요소, TodoVO , -->
+    <select id="selectAll" resultType="com.busanit501.springminitest.domain.UserVO">
+        select *
+        from tbl_user
+        order by uno desc
+    </select>
+
+    <select id="selectOne" resultType="com.busanit501.springminitest.domain.UserVO">
+        select *
+        from tbl_user
+        where uno = #{uno}
+    </select>
+
+    <delete id="delete">
+        delete
+        from tbl_user
+        where uno = #{uno}
+    </delete>
+    <update id="update">
+        update tbl_user
+        set name    = #{name},
+            password = #{password},
+            dueDate  = #{dueDate},
+            finished = #{finished}
+        where uno = #{uno}
+    </update>
+
+
+    <select id="selectList" resultType="com.busanit501.springminitest.domain.UserVO">
+        select * from tbl_user
+        <include refid="search"></include>
+        order by uno desc limit #{skip}, #{size}
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(uno)
+        from tbl_user
+        <include refid="search"></include>
+    </select>
+    <sql id="search">
+        <where>
+            <if test="types != null and types.length >0">
+                <foreach collection="types" item="type"
+                         open="(" close=")" separator="OR">
+                    <if test="type == 't'.toString()">
+                        name like concat('%',#{keyword},'%')
+                    </if>
+                    <if test="type == 'w'.toString()">
+                        password like concat('%',#{keyword},'%')
+                    </if>
+                </foreach>
+            </if>
+            <if test="finished">
+                <trim prefix="and">
+                    finished = 1
+                </trim>
+            </if>
+            <if test="from != null and to != null">
+                <trim prefix="and">
+                    dueDate between #{from} and #{to}
+                </trim>
+            </if>
+        </where>
+    </sql>
+</mapper>
+
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/busanit501_Server_241120(M).iml" filepath="$PROJECT_DIR$/.idea/busanit501_Server_241120(M).iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/boot501.test.iml" filepath="$PROJECT_DIR$/.idea/modules/boot501.test.iml" />
     </modules>
   </component>
 </project>
